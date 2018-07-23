@@ -179,6 +179,7 @@ window.onload=function(){
             //让左右箭头隐藏
             arrLeft.classList.remove('arr_active')
             arrRight.classList.remove('arr_active')
+            clearInterval(timer)
             timer = setInterval(function () {
                 key++;
                 carouselFn(key)

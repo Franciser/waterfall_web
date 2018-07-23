@@ -84,9 +84,12 @@ a {
                 text-align: center;
                 li{
                     &:nth-of-type(1){
-                       background-color: #fff;
+                    //    background-color: #fff;
+                    border-bottom:4px solid #fff;
                         a{
-                            color:#2fcd93;
+                            // color:#2fcd93;
+                            color:#fff;
+                            
                         } 
                     }
                     // &:hover{
@@ -102,11 +105,13 @@ a {
                             
                             display: inline-block;
                             text-align: center;
-                            height:60px;
-                            line-height:60px;
-                            padding:0 15px;
+                            height:40px;
+                            line-height:40px;
+                            margin:10px 10px;
+                            padding:0 5px;
                             box-sizing: border-box;
                             a{
+                                display: block;
                                 color:#fff;
                             }
                         }
@@ -306,10 +311,10 @@ a {
         overflow: hidden;
         .carousel_wrap{
             width: 600%;
-            transform: translateX(-16.666%);
+            transform: translateX(-100/6%);
             .carousel_item{
                 float: left;
-                width: 16.666%;
+                width: 100/6%;
                 a{
                     img{
                         width:100%;
