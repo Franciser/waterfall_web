@@ -132,7 +132,7 @@ window.onload=function(){
         var timerInterval = null;
         var scrollValue = 0;
         window.addEventListener('scroll',function(){
-            if(document.documentElement.scrollTop>100){
+            if(document.documentElement.scrollTop||document.body.scrollTop>100){
                 returnTopBtn.classList.add('returnTop_active');
             }else{
                 returnTopBtn.classList.remove('returnTop_active');
@@ -140,7 +140,7 @@ window.onload=function(){
         })
         returnTopBtn.addEventListener('click', function () {
             clearInterval(timerInterval)
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
             scrollValue = scrollTop;
             if (scrollTop > 100) {
                 timerInterval = setInterval(function () {
@@ -150,6 +150,7 @@ window.onload=function(){
                         clearInterval(timerInterval)
                     }
                     document.documentElement.scrollTop = scrollValue;
+                    document.body.scrollTop = scrollValue;
 
                 }, 10)
 
@@ -401,7 +402,7 @@ window.onload=function(){
     function getScrollTop() {
         //获得瀑布流大容器距离文档顶部的距离再加上自身的高度
         var lastWaterfallTop = waterfallContent.offsetTop + waterfallContent.offsetHeight;
-        var scrollTop = document.documentElement.scrollTop;
+        var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
         var clientHeight = document.documentElement.clientHeight;
 
         if (scrollTop + clientHeight >= lastWaterfallTop) {
